@@ -4,23 +4,51 @@
     <meta charset="UTF-8">
     <title>Fake PaidSkills Bot TEST</title>
     <style>
-         body {
-        margin: 0;
-        padding: 0;
-        background: url('PaidSkillsWebsite.png') no-repeat top center;
-        background-size: auto;
-        min-height: 100vh;
-        width: 100%;
-        overflow: auto;
-    }
-    html, body {
-        height: 100%;
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0e0e18;
+            overflow: auto;
+            display: flex;
+            justify-content: center;
+        }
+        img.background {
+            display: block;
+            min-width: 1864px; /* szerokość Twojego screena */
+            min-height: 5444px; /* wysokość Twojego screena (przykładowo) */
+            width: auto;
+            height: auto;
         }
     </style>
 </head>
 <body>
+    <img src="PaidSkillsWebsite.png" alt="PaidSkills Screenshot" class="background">
+    
+    <!-- Chatbase bot script -->
     <script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="jPgbE5No8hVioGu7REdHp";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-</script>
+        (function(){
+            if(!window.chatbase || window.chatbase("getState") !== "initialized"){
+                window.chatbase = (...arguments) => {
+                    if(!window.chatbase.q){window.chatbase.q = []}
+                    window.chatbase.q.push(arguments)
+                };
+                window.chatbase = new Proxy(window.chatbase, {
+                    get(target, prop) {
+                        if(prop === "q"){return target.q}
+                        return (...args) => target(prop, ...args)
+                    }
+                });
+            }
+            const onLoad = function(){
+                const script = document.createElement("script");
+                script.src = "https://www.chatbase.co/embed.min.js";
+                script.id = "jPgbE5No8hVioGu7REdHp";
+                script.domain = "www.chatbase.co";
+                document.body.appendChild(script);
+            }
+            if(document.readyState === "complete"){onLoad()}
+            else{window.addEventListener("load", onLoad)}
+        })();
+    </script>
 </body>
 </html>
